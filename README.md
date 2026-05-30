@@ -1,9 +1,5 @@
 # rpscrape
 
-Horse racing data has been hoarded by a few companies, enabling them to effectively extort the public for access to any worthwhile historical amount. Compared to other sports where historical data is easily and freely available to use and query as you please, racing data in most countries is far harder to come by and is often only available with subscriptions to expensive software.
-
-The aim of this tool is to provide a way of gathering large amounts of historical data at no cost.
-
 #### Table of Contents
 
 - [Requirements](#requirements)
@@ -12,7 +8,6 @@ The aim of this tool is to provide a way of gathering large amounts of historica
 - [Scrape Racecards](#scrape-racecards)
 - [Settings](#settings)
 - [Authentication](#authentication)
-- [Tip Jar](#tip-jar)
 
 ### Requirements
 
@@ -65,9 +60,12 @@ When scraping jumps data, the year refers to the season start. For example, the 
 
 ### Examples
 
+##### All scripts should be run from the scripts directory.
+
 All races on a specific date:
 
 ```
+cd scripts
 ./rpscrape.py -d 2020/10/01
 ```
 
@@ -199,51 +197,13 @@ Credentials are stored in a .env file in the root directory. Make sure .env is a
 
 ```
 EMAIL=your@email.com
-AUTH_STATE=your_auth_state
 ACCESS_TOKEN=your_access_token
 ```
 
 To find your tokens, login to the site and open the cookies section in the storage tab of your browser's developer tools.
 
-You need the values for auth_state and cognito access token (not to be confused with the AccessToken cookie).
+You need the value for cognito access token (not to be confused with the AccessToken cookie).
 
 There will be multiple keys beginning with `CognitoIdentityServiceProvider`, you want the value for the one that ends with `.accessToken`. It should be directly under email if keys are sorted by name.
 
-![alt text](https://i.postimg.cc/FK41xJ3W/20260103-113009.png)
 ![alt text](https://i.postimg.cc/nLJM1QBg/20260103-113046.png)
-
-## Tip Jar
-
-This project has been maintained for years at no cost, and will continue to be, but if you found it valuable and would like to tip me, you can send to any of the following addresses.
-
----
-
-#### Nano (XNO)
-
-`nano_1cigm8i1hnhqhd7scd1hdfya8xxm7b7u8ar5zu5dtyhf5aedinmx3w3ghhfa`
-
----
-
-#### Monero (XMR)
-
-`86pjtDW83SDTE2AoQFxSBJPhT5H8WcSRkJUf74TcDzTLPZhJeeha9ZD2SStTxkdqWtTXr4hbKopx3GguYsKRywrUBavJ7Je`
-
----
-
-#### Bitcoin (BTC)
-
-`bc1q7ad36qq9zmw77h4dhl0q44hddlutfygz5z4sa3`
-
----
-
-#### Solana (SOL)
-
-`5zqqKsgC6ZF18cySJjaULxREPLzNFnuHrMfGohvuvFHb`
-
----
-
-#### Ethereum (ETH)
-
-`0x73b7207FDf50E4f6Fb444597f9C33be7E2baA0CE`
-
----
